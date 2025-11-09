@@ -1,0 +1,295 @@
+.analytics {
+  padding: 20px;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.analytics-header h2 {
+  margin: 0;
+  color: #333;
+}
+
+.date-filter {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.date-filter input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.access-denied {
+  text-align: center;
+  padding: 60px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+.analytics-card {
+  background: white;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.2s;
+}
+
+.analytics-card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.analytics-card h3 {
+  margin: 0 0 20px 0;
+  color: #333;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+.overdue-card {
+  border-left: 4px solid #dc3545;
+}
+
+/* Status Chart */
+.status-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.status-bar {
+  height: 24px;
+  min-width: 20px;
+  border-radius: 12px;
+  transition: width 0.3s ease;
+}
+
+.status-label {
+  font-weight: 500;
+  min-width: 120px;
+}
+
+/* Equipment List */
+.equipment-list,
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.equipment-item,
+.user-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.equipment-item:hover,
+.user-item:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+}
+
+.equipment-rank,
+.user-rank {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #007bff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.equipment-details,
+.user-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.equipment-category,
+.user-email {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.equipment-count,
+.user-count {
+  font-weight: 600;
+  color: #28a745;
+}
+
+/* Overdue List */
+.no-overdue {
+  text-align: center;
+  color: #28a745;
+  font-size: 1.1rem;
+  margin: 20px 0;
+}
+
+.overdue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.overdue-item {
+  padding: 15px;
+  background: #fff5f5;
+  border-left: 4px solid #dc3545;
+  border-radius: 0 6px 6px 0;
+}
+
+.overdue-equipment {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.overdue-equipment strong {
+  color: #333;
+}
+
+.overdue-user {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.overdue-date {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.875rem;
+}
+
+.days-overdue {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .analytics {
+    padding: 10px;
+  }
+
+  .analytics-header {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .date-filter {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .date-filter input,
+  .btn {
+    width: 100%;
+  }
+
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-card {
+    padding: 20px;
+  }
+
+  .status-item,
+  .equipment-item,
+  .user-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .status-bar {
+    width: 100% !important;
+    min-width: unset;
+  }
+
+  .equipment-details,
+  .user-details {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .analytics-card {
+    padding: 15px;
+  }
+
+  .analytics-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .overdue-item {
+    padding: 12px;
+  }
+}
